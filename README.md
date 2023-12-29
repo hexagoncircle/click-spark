@@ -2,7 +2,7 @@
 
 Add a little spark to your clicks. ✨
 
-- <a href="https://codepen.io/hexagoncircle/pen/bGZdWyw">CodePen demo</a>
+<a href="https://codepen.io/hexagoncircle/pen/bGZdWyw">CodePen demo</a>
 
 ## Usage
 
