@@ -73,10 +73,7 @@ class ClickSpark extends HTMLElement {
         }
       </style>
       <svg width="30" height="30" viewBox="0 0 100 100" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
-        ${Array.from(
-          { length: 8 },
-          (_, i) => `<line style="--i: ${i}" x1="50" y1="30" x2="50" y2="4"/>`
-        ).join("")}
+        ${Array.from({ length: 8 }, (_) => `<line x1="50" y1="30" x2="50" y2="4"/>`).join("")}
       </svg>
     `;
 
