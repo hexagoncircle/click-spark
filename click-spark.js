@@ -6,10 +6,16 @@ class ClickSpark extends HTMLElement {
     this.svg;
   }
 
+  get activeEls() {
+    return this.getAttribute("active-on");
+  }
+
   connectedCallback() {
     this.setupSpark();
 
     this.root.addEventListener("click", (e) => {
+      if (this.activeEls && !e.target.matches(this.activeEls)) return;
+
       this.setSparkPosition(e);
       this.animateSpark();
     });
