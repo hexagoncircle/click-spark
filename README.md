@@ -17,7 +17,7 @@ Put the custom element before the closing `</body>` tag:
 
 ## Change spark color
 
-Set a spark color via CSS custom property.
+Set a spark color via CSS custom property:
 
 ```html
 <click-spark style="--click-spark-color: blue"></click-spark>
@@ -25,11 +25,13 @@ Set a spark color via CSS custom property.
 
 ## Set active elements
 
-Want the spark to only occur on particular elements? Pass in a comma-separated list of selectors. Here's a [CodePen demo](https://codepen.io/hexagoncircle/pen/rNReOPd) of the following example.
+Want the spark to only occur on particular elements? Pass in a comma-separated list of selectors:
 
 ```html
 <click-spark active-on=".send-sparks, #i-love-sparks, [data-sparks]"></click-spark>
 ```
+
+Here's a [CodePen demo](https://codepen.io/hexagoncircle/pen/rNReOPd) of that example.
 
 ## Dev notes
 
