@@ -66,15 +66,14 @@ class ClickSpark extends HTMLElement {
         
         svg {
           pointer-events: none;
-          position: fixed;
-          top: -100%;
-          left: -100%;
+          position: absolute;
           rotate: -20deg;
           stroke: var(--click-spark-color, currentcolor);
         }
 
         line {
           stroke-dasharray: 30;
+          stroke-dashoffset: 30;
           transform-origin: center;
         }
       </style>
