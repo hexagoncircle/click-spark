@@ -1,6 +1,6 @@
 {
   "name": "click-spark",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A web component that adds a little spark to your clicks",
   "main": "click-spark.js",
   "scripts": {},
