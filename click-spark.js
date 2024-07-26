@@ -50,8 +50,8 @@ class ClickSpark extends HTMLElement {
   }
 
   setSparkPosition(e) {
-    this.svg.style.left = e.clientX - this.svg.clientWidth / 2 + "px";
-    this.svg.style.top = e.clientY - this.svg.clientHeight / 2 + "px";
+    this.svg.style.left = e.pageX - this.svg.clientWidth / 2 + "px";
+    this.svg.style.top = e.pageY - this.svg.clientHeight / 2 + "px";
   }
 
   setupSpark() {
