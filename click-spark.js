@@ -55,7 +55,10 @@ class ClickSpark extends HTMLElement {
 
   setupSpark() {
     let template = `
-      <style>        
+      <style>
+        :host {
+          display: contents;
+        }
         svg {
           pointer-events: none;
           position: absolute;
