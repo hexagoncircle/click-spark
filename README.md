@@ -4,6 +4,14 @@ Add a little spark to your clicks. ✨
 
 [CodePen demo](https://codepen.io/hexagoncircle/full/bGZdWyw) | [Blog post](https://ryanmulligan.dev/blog/click-spark/)
 
+## Install
+
+```
+npm install click-spark
+```
+
+Or you can download the `click-spark.js` file from this repo and add it to your project.
+
 ## Usage
 
 Add the custom element wherever we want to see sparks fly.
