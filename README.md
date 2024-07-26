@@ -2,22 +2,24 @@
 
 Add a little spark to your clicks. ✨
 
-<a href="https://codepen.io/hexagoncircle/full/bGZdWyw">CodePen demo</a>
+[CodePen demo](https://codepen.io/hexagoncircle/full/bGZdWyw) | [Blog post](https://ryanmulligan.dev/blog/click-spark/)
 
 ## Usage
 
 Add the custom element wherever we want to see sparks fly.
 
 ```html
+<script type="module" src="click-spark.js"></script>
+
 <body>
+  <!-- only add sparks within this container -->
+  <div class="container">
+    <click-spark></click-spark>
+  </div>
+
   <!-- sparks appear everywhere we click -->
   <click-spark></click-spark>
 </body>
-
-<div class="container">
-  <!-- sparks only appear when clicking inside container -->
-  <click-spark></click-spark>
-</div>
 ```
 
 ## Change spark color
