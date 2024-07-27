@@ -5,7 +5,8 @@ class ClickSpark extends HTMLElement {
   }
 
   connectedCallback() {
-    this.setupSpark();
+    this.shadowRoot.innerHTML = this.createSpark();
+    this.svg = this.shadowRoot.querySelector("svg");
     this._parent = this.parentNode;
     this._parent.addEventListener("click", this);
   }
@@ -50,36 +51,26 @@ class ClickSpark extends HTMLElement {
   }
 
   setSparkPosition(e) {
-    this.svg.style.left = e.pageX - this.svg.clientWidth / 2 + "px";
-    this.svg.style.top = e.pageY - this.svg.clientHeight / 2 + "px";
+    this.style.left = e.pageX - this.clientWidth / 2 + "px";
+    this.style.top = e.pageY - this.clientHeight / 2 + "px";
   }
 
-  setupSpark() {
-    let template = `
+  createSpark() {
+    return `
       <style>
         :host {
-          display: contents;
-        }
-        svg {
-          pointer-events: none;
           position: absolute;
-          rotate: -20deg;
-          stroke: var(--click-spark-color, currentcolor);
-        }
-
-        line {
-          stroke-dasharray: 30;
-          stroke-dashoffset: 30;
-          transform-origin: center;
+          pointer-events: none;
         }
       </style>
-      <svg width="30" height="30" viewBox="0 0 100 100" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
-        ${Array.from({ length: 8 }, (_) => `<line x1="50" y1="30" x2="50" y2="4"/>`).join("")}
+      <svg width="30" height="30" viewBox="0 0 100 100" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" stroke="var(--click-spark-color, currentcolor)" transform="rotate(-20)">
+        ${Array.from(
+          { length: 8 },
+          (_) =>
+            `<line x1="50" y1="30" x2="50" y2="4" stroke-dasharray="30" stroke-dashoffset="30" style="transform-origin: center" />`
+        ).join("")}
       </svg>
     `;
-
-    this.shadowRoot.innerHTML = template;
-    this.svg = this.shadowRoot.querySelector("svg");
   }
 }
 
