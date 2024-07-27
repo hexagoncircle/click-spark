@@ -2,19 +2,20 @@ class ClickSpark extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
-    this.clickEvent = this.handleClick.bind(this);
   }
 
   connectedCallback() {
     this.setupSpark();
-    this.parentNode.addEventListener("click", this.clickEvent);
+    this._parent = this.parentNode;
+    this._parent.addEventListener("click", this);
   }
 
   disconnectedCallback() {
-    this.parentNode.removeEventListener("click", this.clickEvent);
+    this._parent.removeEventListener("click", this);
+    delete this._parent;
   }
 
-  handleClick(e) {
+  handleEvent(e) {
     this.setSparkPosition(e);
     this.animateSpark();
   }
