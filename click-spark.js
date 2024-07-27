@@ -1,7 +1,6 @@
 class ClickSpark extends HTMLElement {
   constructor() {
     super();
-    this.svg;
     this.attachShadow({ mode: "open" });
     this.clickEvent = this.handleClick.bind(this);
   }
@@ -11,8 +10,8 @@ class ClickSpark extends HTMLElement {
     this.parentNode.addEventListener("click", this.clickEvent);
   }
 
-  detachedCallback() {
-    this.removeEventListener("click", this.clickEvent);
+  disconnectedCallback() {
+    this.parentNode.removeEventListener("click", this.clickEvent);
   }
 
   handleClick(e) {
