@@ -1,4 +1,4 @@
-# click-spark
+# <click-spark> Web Component
 
 Add a little spark to your clicks. ✨
 
